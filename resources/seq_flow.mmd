@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant M as Main
+    participant W as WebPage
+    participant U as User
+    participant V as Video
+    M->>U: create user
+    M->>V: create videos
+    M->>W: create webpage
+    W->>U: add user
+    W->>V: add videos to recommended_videos
+    W->>U: user.subscribe(video)
+    W->>U: user.addToPlaylist(video)
+    W->>W: searchVideos(query)
+    W->>W: getVideosByCategory(category)
+    W->>W: switchToDarkMode()

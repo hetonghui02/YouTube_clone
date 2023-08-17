@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube Clone</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">YouTube Clone</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">推荐</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">分类</a>
+                    </li>
+                </ul>
+            </div>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="搜索" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+            </form>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>推荐视频</h2>
+                    <!-- Here we will use Jinja2 to loop through the recommended videos -->
+                    {% for video in recommended_videos %}
+                        <div class="card mb-4">
+                            <img src="{{ video.thumbnail_url }}" class="card-img-top" alt="{{ video.title }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ video.title }}</h5>
+                                <p class="card-text">{{ video.description }}</p>
+                                <a href="{{ video.video_url }}" class="btn btn-primary">观看视频</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-4">
+                    <h2>我的订阅</h2>
+                    <!-- Here we will use Jinja2 to loop through the user's subscriptions -->
+                    {% for video in user.subscriptions %}
+                        <div class="card mb-4">
+                            <img src="{{ video.thumbnail_url }}" class="card-img-top" alt="{{ video.title }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ video.title }}</h5>
+                                <p class="card-text">{{ video.description }}</p>
+                                <a href="{{ video.video_url }}" class="btn btn-primary">观看视频</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p class="text-center">&copy; 2021 YouTube Clone</p>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/dark_mode.js') }}"></script>
+</body>
+</html>

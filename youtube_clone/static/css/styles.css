@@ -1,0 +1,90 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #181818;
+    color: #ffffff;
+}
+
+header {
+    background-color: #f8f9fa;
+}
+
+header.dark-mode {
+    background-color: #282828;
+}
+
+.navbar-brand {
+    color: #ff0000;
+}
+
+.navbar-brand.dark-mode {
+    color: #ff0000;
+}
+
+.nav-link {
+    color: #000000;
+}
+
+.nav-link.dark-mode {
+    color: #ffffff;
+}
+
+.card {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.card.dark-mode {
+    background-color: #282828;
+    color: #ffffff;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #000000;
+}
+
+.card-title.dark-mode {
+    color: #ffffff;
+}
+
+.card-text {
+    color: #000000;
+}
+
+.card-text.dark-mode {
+    color: #ffffff;
+}
+
+.btn-primary {
+    background-color: #ff0000;
+    border-color: #ff0000;
+}
+
+.btn-primary:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+}
+
+footer {
+    background-color: #f8f9fa;
+    color: #000000;
+    padding: 1rem 0;
+}
+
+footer.dark-mode {
+    background-color: #282828;
+    color: #ffffff;
+}
